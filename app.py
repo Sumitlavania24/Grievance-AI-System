@@ -4,8 +4,12 @@ import streamlit as st
 import pandas as pd
 
 # Load model and vectorizer
-model = joblib.load("model.pkl")
-vectorizer = joblib.load("vectorizer.pkl")
+import pickle
+
+with open("model.pkl", "rb") as f:
+    model = pickle.load(f)
+with open("vectorizer.pkl", "rb") as f:
+    vectorizer = pickle.load(f)
 
 # Streamlit App
 st.set_page_config(page_title="Grievance Classifier", page_icon="🗂️")
