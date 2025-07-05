@@ -1,16 +1,12 @@
 
 import streamlit as st
-#import joblib
+import joblib
 import pandas as pd
 
 # Load model and vectorizer
-import pickle
-
-with open("model.pkl", "rb") as f:
-    model = pickle.load(f)
-with open("vectorizer.pkl", "rb") as f:
-    vectorizer = pickle.load(f)
-
+import joblib
+model = joblib.load("model.pkl")
+vectorizer = joblib.load("vectorizer.pkl")
 # Streamlit App
 st.set_page_config(page_title="Grievance Classifier", page_icon="🗂️")
 st.title("🧠 Grievance Department Classifier")
